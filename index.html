@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APOD-NASA</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="bodyContainer">
+    <div id="img"></div>
+
+    <div class="divContainer" id="divContainer">
+        <main class="cMain" id="cMain">
+
+            <h1 class="textCenter" id="textCenter">Astronomy Picture of the Day
+            </h1>
+            <form class="form">
+                <div class="formData" id="formData">
+                    <label for="forData" class="labelName" id="labelName">Insert the date: </label>
+                    <input type="date" class="classDate" id="idDate">
+                    <button class="search-date" type="button">Search date</button>
+                </div>
+
+                <div id="lastbutton">
+                    <button class="buttonPrevious" type="button" id="buttonPrevious">Previous</button>
+                    <button class="buttonNext" type="button" id="buttonNext">Next</button>
+                   
+                </div>
+                <div class="returnResult" id="returnResult"></div>
+            </form>
+        </main>
+        <script src="projeto-apod.js"></script>
+    </div>
+    <footer class="rodape"> &copy;NASA<br>Authors & editors: Robert Nemiroff (MTU) & Jerry Bonnell (UMCP)
+        NASA Official: Phillip Newman Specific rights apply.<br>NASA Web Privacy Policy and Important Notices
+        A service of: ASD at NASA / GSFC
+        & Michigan Tech. U.</footer>
+</body>
+
+</html>

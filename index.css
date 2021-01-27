@@ -1,0 +1,33 @@
+
+body{
+    text-align: center;
+    height: 200px;
+    background-image: url(./img/estrelas.webp);
+    background-size: cover;
+    border: 2px, solid, darkgray;
+}
+
+.formData{
+    align-items: center;
+}
+
+.labelName{
+    color: aliceblue;
+    text-align: center;
+}
+
+.textCenter{
+    text-align: center;
+    color: aliceblue;
+}
+
+.lastbutton{
+    align-items: center;
+}
+
+footer{
+    padding-top: 500px;
+    color: aliceblue;
+    text-align: center;
+}
+
