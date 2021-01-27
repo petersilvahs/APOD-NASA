@@ -7,6 +7,7 @@ let returnResult = document.getElementById("returnResult");
 let img = document.getElementById("nasa-img");
 let inpDate = document.getElementById("idDate");
 let data = "";
+/*OK*/
 
 
 function proximaData(pdata)
@@ -51,6 +52,7 @@ function proximaData(pdata)
 function pegarDados(){
     mostraData = idDate.value;
 }
+/*OK*/
 
 class Visualizacao
 {
@@ -64,29 +66,63 @@ class Visualizacao
 
     }
 
-    get img(){
-        
+    get img()
+    {
+        this.img.setAttribute("id", "nImg");  //caminho da mensagem
+        this.img.src = this.img;
+        return this.img;
+    }
+    get paragrafo()
+    {
+        this.paragrafo.setAttribute("id", "nParagrafo");
+        this.paragrafo.textContent = this.texto;
+        return this.paragrafo;
     }
 }
+
 class Controle 
 {
     pegaControle()
     {
-        let modo = new pegaModelo();
+        let modo = new PegaModelo();
         modo.reservaData();
 
-        let visao = new pegaVisao(modo);
+        let visao = new PegaVisao(modo);
+     
         visao.reservaVisao();
-}   
-    
-    showDate(){
+    }  
+}
+/*OK*/
+
+class PegaModelo
+{
+    constructor()
+    {
+        this.paragrafo = " ";
+        this.imagem = " ";
+    }
+    get paragrafo(){
+        return this.paragrafo
+    }
+    get imagem(){
+        return this.imagem;
+    }
+
+    reservaData()
+    {
         let request = new XMLHttpRequest();
         request.open("GET", `https://api.nasa.gov/planetary/apod?api_key=voMKoxCaObZFAQ23BPp6eUxusfRTvV4KukidpMUO=${data}`);
-
-        request.addEventListener("load", function resquestEvent()
-        {
+        request.addEventListener("load", () => {
             if(request.status == 200){
-                let results = JSON.parse(request.responseText);
-
-            }
+            let returnResult = JSON.parse(request.responseText);
+            this.img = returnResult;
+            this.paragrafo = returnResult.paragrafo;
         }
+        else{
+            request.status;
+        }
+    })
+        request.send();
+}
+}
+
