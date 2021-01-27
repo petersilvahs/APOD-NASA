@@ -56,6 +56,37 @@ class Visualizacao
 {
     constructor(modelo)
     {
+        this.div = document.createElement("div");
+        this.paragrafo = document.createElement("p");
+        this.img = document.createElement("img");
+        this.imagem = modelo.img;
+        this.texto = modelo.paragrafo;
 
     }
+
+    get img(){
+        
+    }
 }
+class Controle 
+{
+    pegaControle()
+    {
+        let modo = new pegaModelo();
+        modo.reservaData();
+
+        let visao = new pegaVisao(modo);
+        visao.reservaVisao();
+}   
+    
+    showDate(){
+        let request = new XMLHttpRequest();
+        request.open("GET", `https://api.nasa.gov/planetary/apod?api_key=voMKoxCaObZFAQ23BPp6eUxusfRTvV4KukidpMUO=${data}`);
+
+        request.addEventListener("load", function resquestEvent()
+        {
+            if(request.status == 200){
+                let results = JSON.parse(request.responseText);
+
+            }
+        }
